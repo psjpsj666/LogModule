@@ -90,7 +90,9 @@ void Logger::WriteLogToFile(LogLevel nLevel, std::string LogMsg)
         std::string num(fileName.begin()+index1,fileName.begin()+index2);
         i = atoi(num.c_str());
         ++i;
-        rename(fileName.c_str(), (std::string(NowDate) + std::to_string(i) + ".log").c_str());
+        //rename(fileName.c_str(), (std::string(NowDate) + std::to_string(i) + ".log").c_str());
+        fileName.clear();
+        fileName = std::string(NowDate) + std::to_string(i) + ".log";
     }
 }
 
